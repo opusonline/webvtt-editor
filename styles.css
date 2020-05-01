@@ -1,0 +1,233 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body, input, select, textarea, button {
+    font-size: small;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    line-height: 1.5;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    height: 100vh;
+}
+body.drop-target::before {
+    content: 'Drop files here';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    pointer-events: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.6);
+    border: 8px dashed yellow;
+    font-size: 1.5rem;
+    color: #fff;
+}
+button {
+    padding: 2px 5px;
+    cursor: pointer;
+}
+#header {
+    padding: 10px;
+    flex-shrink: 0;
+}
+#main {
+    display: flex;
+    flex-grow: 1;
+    min-height: 0;
+}
+#main-left {
+    width: 35%;
+    max-width: 600px;
+    padding-left: 10px;
+}
+#main-right {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+#main-left video {
+    width: 100%;
+    max-height: calc(100vh - 35px);
+    vertical-align: middle;
+}
+#timing {
+    display: flex;
+    align-items: center;
+    margin-top: 5px;
+}
+#timing #timer {
+    padding: 0 10px;
+}
+#timing #progress {
+    flex-grow: 1;
+}
+#cue-table {
+    width: 100%;
+    border-spacing: 0;
+}
+#cue-table th,
+#cue-table td {
+    padding: 5px;
+    vertical-align: top;
+    text-align: left;
+    border-right: 1px solid #cdcdcd;
+    border-bottom: 1px solid #cdcdcd;
+}
+#cue-table tr:first-child th {
+    border-top: 1px solid #cdcdcd;
+}
+#cue-table tr th:first-child,
+#cue-table tr td:first-child {
+    border-left: 1px solid #cdcdcd;
+}
+#cue-table thead tr th {
+    background-color: #efefef;
+}
+#cue-table tbody tr:nth-child(even) {
+    background-color: #fafafa;
+}
+#cue-table .text {
+    width: 50%;
+}
+#cue-table .textinput {
+    /* display: flex;
+    align-items: flex-start; */
+}
+#cue-table textarea {
+    flex-grow: 1;
+    padding: 5px;
+    resize: none;
+    vertical-align: middle;
+}
+#cue-table .textinput .apply-text {
+    margin-left: 5px;
+}
+#cue-table .textinput:not(.changed) .apply-text {
+    display: none;
+}
+#cue-table tbody tr.active {
+    color: #fff;
+    background: #666;
+}
+#main-right-options {
+    display: flex;
+    flex-shrink: 0;
+    padding: 0 10px 10px 20px;
+}
+#main-right-options .spacer {
+    flex-grow: 1;
+}
+#main-right-options button {
+    margin-right: 10px;
+}
+#main-right-options button:last-child {
+    margin-right: 0;
+}
+#cue-table-wrap {
+    flex-grow: 1;
+    overflow: auto;
+    padding: 0 10px 10px 20px;
+    -webkit-overflow-scrolling: touch;
+}
+#playPause.paused .pause,
+#playPause:not(.paused) .play {
+    display: none;
+}
+#video {
+    cursor: pointer;
+}
+#video::cue {
+    color: #fff;
+    font-size: 120%;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+#progress {
+    cursor: col-resize;
+    -webkit-appearance: none;
+    position: relative;
+}
+#progress[value]::-webkit-progress-bar {
+    background-color: #eee;
+    border-radius: 3px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.25) inset;
+    overflow: hidden;
+}
+#progress[value]::-webkit-progress-value {
+    background-color: #666;
+}
+#cue-table thead th {
+    position: sticky;
+    top: 0;
+}
+#previewButton {
+    margin-left: 10px;
+}
+body.preview #header,
+body.preview #audio-slider,
+body.preview #main-right {
+    display: none;
+}
+body.preview #main-left {
+    width: 100%;
+    max-width: none;
+    padding-left: 0;
+}
+body.preview #preview {
+    margin: 0 auto;
+}
+body.preview #timing {
+    margin: 5px 10px;
+}
+body:not(.preview) #previewButton .small,
+body.preview #previewButton .big {
+    display: none;
+}
+button.insertTime.update {
+    visibility: hidden;
+    padding-right: 2px;
+}
+tr:hover button.insertTime.update {
+    visibility: visible;
+}
+#cues .mergeUp,
+#cues tr:first-child .move.up,
+#cues tr:last-child .move.down {
+    display: none;
+}
+#importVTTFile,
+#importVideoFile {
+    display: none;
+}
+
+
+@media only screen and (max-width: 600px) {
+    #main {
+        flex-direction: column;
+    }
+    #main-left {
+        width: 100%;
+        max-width: 100%;
+        padding-right: 10px;
+    }
+    #main-right {
+        margin-top: 5px;
+        padding-top: 5px;
+        border-top: 1px solid #aaa;
+        min-height: 0;
+    }
+    #main-right-options {
+        padding: 0 10px;
+    }
+    #cue-table-wrap {
+        padding: 0 10px;
+    }
+}

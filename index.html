@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>WebVTT Editor</title>
+        <meta name="apple-mobile-web-app-title" content="WebVTT Editor"/>
+        <meta name="apple-mobile-web-app-status-bar-style" content="default"/>
+        <meta name="theme-color" content="#efefef"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="apple-touch-icon" href="images/icons/apple-icon.png"/>
+        <link rel="apple-touch-icon-precomposed" href="images/icons/apple-icon-precomposed.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="images/icons/favicon-16x16.png"/>
+        <link rel="icon" type="image/png" sizes="32x32" href="images/icons/favicon-32x32.png"/>
+        <link rel="icon" type="image/png" sizes="192x192" href="images/icons/android-icon-192x192.png">
+        <link rel="manifest" href="manifest.json"/>
+        <link rel="shortcut icon" href="images/icons/favicon.ico"/>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <header id="header">
+            <span>
+                <button type="button" id="importVideo" title="Import Video">Load Video</button>
+                <input type="file" id="importVideoFile" accept="video/*" />
+            </span>
+            <span>
+                <button type="button" id="importVTT" title="Import VTT">Load VTT</button>
+                <input type="file" id="importVTTFile" accept=".vtt,text/vtt" />
+            </span>
+        </header>
+        <div id="main">
+            <div id="main-left">
+                <div id="preview">
+                    <video id="video" playsinline></video>
+                    <div id="timing">
+                        <button type="button" id="playPause" class="paused" title="Play/Pause"><span class="play">&#9658;</span><span class="pause">&#10073; &#10073;</span></button>
+                        <span id="timer">00:00:00</span>
+                        <progress id="progress" min="0" max="100" value="0"></progress>
+                        <button type="button" id="previewButton" title="Fullscreen"><span class="big">&#8596;</span><span class="small">&#8889;</span></button>
+                    </div>
+                </div>
+            </div>
+            <div id="main-right">
+                <div id="main-right-options">
+                    <button type="button" id="addCue" title="Add cue">Add</button>
+                    <button type="button" id="sortCues" title="Sort cues">Sort</button>
+                    <span class="spacer"></span>
+                    <button type="button" id="exportVTT" title="Export VTT">Export VTT</button>
+                </div>
+                <div id="cue-table-wrap">
+                    <table id="cue-table">
+                        <thead>
+                            <tr><th>#</th><th></th><th>Start</th><th>End</th><th class="text">Text</th><th></th></tr>
+                        </thead>
+                        <tbody id="cues"></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <script src="app.js"></script>
+    </body>
+</html>

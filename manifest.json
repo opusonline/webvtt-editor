@@ -1,0 +1,22 @@
+{
+  "name": "WebVTT Editor",
+  "short_name": "WebVTT",
+  "lang": "en",
+  "start_url": "/vtt/?utm_source=standalone",
+  "scope": "/vtt/",
+  "display": "standalone",
+  "theme_color": "#efefef",
+  "background_color": "#ffffff",
+  "icons": [
+    {
+      "src": "/vtt/images/icons/android-icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/vtt/images/icons/android-icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
