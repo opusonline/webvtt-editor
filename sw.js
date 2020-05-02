@@ -1,4 +1,4 @@
-var _cacheName = 'v1';
+var _cacheName = 'v2';
 var _filesToCache = [
     '/webvtt-editor/',
     '/webvtt-editor/index.html',

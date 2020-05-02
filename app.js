@@ -356,6 +356,9 @@ window.on('load', function() {
             _video.pause();
             _video.currentTime = 0;
             _video.src = url;
+            if (_cueList.length === 0) {
+                writeCueList([]);
+            }
         } catch(e) {
             alert(e.message);
         } finally {
