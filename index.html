@@ -43,13 +43,25 @@
                 <div id="main-right-options">
                     <button type="button" id="addCue" title="Add cue">Add</button>
                     <button type="button" id="sortCues" title="Sort cues">Sort</button>
+                    <label for="pos">&nbsp;Pos:</label>
+                    <select id="pos" name="&nbsp;Position:">
+                        <option value="None">None</option>
+                        <option value="TL">Top-Left</option>
+                        <option value="TR">Top-Right</option>
+                        <option value="BL">Bot-Left</option>
+                        <option value="BR">Bot-Right</option>
+                    </select>
+                    <label for "minus">&nbsp;&nbsp</label>
+                    <button type="button" id="minus" title="Decrease score">-1</button>
+                    <button type="button" id="side" title="Side out/Poss">↑↓</button>
+                    <button type="button" id="plus" title="Increase score">+1</button>
                     <span class="spacer"></span>
                     <button type="button" id="exportVTT" title="Export VTT">Export VTT</button>
                 </div>
                 <div id="cue-table-wrap">
                     <table id="cue-table">
                         <thead>
-                            <tr><th>#</th><th></th><th>Start</th><th>End</th><th class="text">Text</th><th></th></tr>
+                            <tr><th>#</th><th></th><th>Start</th><th>End</th><th class="text">Text</th><th></th></th></tr>
                         </thead>
                         <tbody id="cues"></tbody>
                     </table>

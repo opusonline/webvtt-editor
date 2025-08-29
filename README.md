@@ -1,6 +1,8 @@
 WebVTT Editor
 =============
 
+![screenshot](images/icons/android-icon-192x192.png)
+
 This is a very simple editor for WebVTT subtitles.
 
 My wife needed a simple app some time ago for doing such a task and all available apps where too complicated or too expensive. I've noticed that browsers have an API for subtitles and so I've created this little app to add some cues and be able to see the outcome.
@@ -31,16 +33,13 @@ If a time was already set, a button is shown on hover the changes the time to th
 Add or change the text of a cue at any time. It will be updated immediately.
 
 ## Sort
-This will sort cues related to start and end time. This happens automatically when you Export VTT, becuae it is required in the VTT format.
+This will sort cues related to start and end time. This happens automatically when you Export VTT, because it is required in the VTT format.
 
 ## Jump to cue
 Each cue row has a button that allows to quickly jump the video to the start position of the selected cue.
 
 ## Delete cue
 There's a delete button on each cue row to simply delete the selected cue.
-
-## Move up and down
-Move the selected cue up or down manually.
 
 ## Export VTT
 Cues with not timestamps are ignored. Cues are sorted by start and end time. Generated file has the ending `.vtt` and mimeType `text/vtt`.
